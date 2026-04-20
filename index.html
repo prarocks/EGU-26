@@ -1,4 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Statistical Visualization</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Fix missing CSS variables -->
+  <style>
+    :root {
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #666;
+      --color-background-secondary: #f7f7f7;
+      --color-border-primary: #ccc;
+      --color-border-tertiary: #e0e0e0;
+      --border-radius-md: 8px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    /* PASTE YOUR FULL CSS BELOW THIS LINE */
+  </style>
+</head>
+
+<body>
+
+  
 <style>
   .tab-btn { background: none; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 6px 14px; font-size: 13px; color: var(--color-text-secondary); cursor: pointer; transition: all 0.15s; }
   .tab-btn.active { background: var(--color-background-secondary); color: var(--color-text-primary); border-color: var(--color-border-primary); }
@@ -253,3 +282,12 @@ function showTab(name) {
 
 window.addEventListener('load', () => { mkLine('lstChart','lst','LST (°C)'); chartsBuilt.lst = true; });
 </script>
+
+
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+  <!-- PASTE YOUR FULL JS HERE -->
+
+</body>
+</html>
