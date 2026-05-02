@@ -27,11 +27,9 @@
     .btn:hover { background: #c44536; }
     ul.data-sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.8rem; list-style: none; padding: 0; margin: 1rem 0; }
     ul.data-sources li { background: #f8f9fa; padding: 0.6rem 1rem; border-radius: 4px; border: 1px solid #ddd; font-size: 0.9rem; }
-    .download-bar { margin-top: 1rem; padding: 0.8rem; background: #f0f4f8; border-radius: 6px; font-size: 0.9rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-    .download-bar a { color: var(--primary); text-decoration: none; font-weight: 500; }
-    .download-bar a:hover { text-decoration: underline; }
-    .study-area-figure { margin: 1.5rem 0; border: 1px solid var(--light); border-radius: 8px; overflow: hidden; background: #fff; }
-    .study-area-figure img { display: block; width: 100%; height: auto; }
+    .study-area-figure, .section-figure { margin: 1.5rem 0 0; border: 1px solid var(--light); border-radius: 8px; overflow: hidden; background: #fff; }
+    .study-area-figure { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    .study-area-figure img, .section-figure img { display: block; width: 100%; height: auto; }
     footer { text-align: center; padding: 2rem; color: #666; font-size: 0.9rem; border-top: 1px solid var(--light); margin-top: 3rem; }
     footer a { color: var(--primary); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
@@ -67,7 +65,7 @@
       <h2>01 / Introduction</h2>
       <p>Rapid urbanization in the Kathmandu Valley has intensified local warming, creating persistent peri-urban heat islands. Yet, how this baseline warming interacts with <strong>monsoon droughts</strong> to stress grassland ecosystems remains poorly quantified.</p>
       <div class="highlight-box">
-        <strong>Research Aim:</strong> Quantify how monsoon droughts modulate thermal, vegetation, and moisture contrasts between peri-urban and rural grasslands (2000–2022), isolating climate-driven impacts by excluding irrigated agricultural zones.
+        <strong>Research Aim:</strong> Quantify how monsoon droughts modulate thermal, vegetation, and moisture contrasts between peri-urban and rural grasslands (2000-2022), isolating climate-driven impacts by excluding irrigated agricultural zones.
       </div>
       <p><strong>Why it matters:</strong> Drought is a recurring planning stressor, not just a rainfall anomaly. Understanding peri-urban vulnerability helps target green infrastructure, water management, and thermal mitigation in rapidly growing South Asian cities.</p>
     </section>
@@ -82,30 +80,28 @@
       <figure class="study-area-figure">
         <img src="egu26.png" alt="Study area figure for the EGU 2026 presentation">
       </figure>
-      <h3>Data & Variables (JJASO Monsoon Season, 2000–2022)</h3>
+      <h3>Data & Variables (JJASO Monsoon Season, 2000-2022)</h3>
       <ul class="data-sources">
-        <li>🌡️ <strong>LST:</strong> MODIS Terra (MOD11A2), 1 km</li>
-        <li>🌿 <strong>NDVI:</strong> MODIS Terra (MOD13Q1), 250 m</li>
-        <li>💧 <strong>Soil Moisture:</strong> ERA5-Land (0–7 cm), 0.1°</li>
-        <li>📉 <strong>ET₀/PET:</strong> TerraClimate, 4 km</li>
-        <li>🌧️ <strong>Precipitation & SPI-3:</strong> DHM records (1980–2020 baseline)</li>
+        <li><strong>LST:</strong> MODIS Terra (MOD11A2), 1 km</li>
+        <li><strong>NDVI:</strong> MODIS Terra (MOD13Q1), 250 m</li>
+        <li><strong>Soil Moisture:</strong> ERA5-Land (0-7 cm), 0.1 degree</li>
+        <li><strong>ET0/PET:</strong> TerraClimate, 4 km</li>
+        <li><strong>Precipitation & SPI-3:</strong> DHM records (1980-2020 baseline)</li>
       </ul>
-      <div class="download-bar">
-        📥 <a href="Shape_file.zip" download>Shapefile Package</a> | 
-        <a href="EGU26.qgz" download>QGIS Project</a> | 
-        <a href="EGU_Poster_Final (1)_updated.pptx" download>Poster Source (PPTX)</a>
-      </div>
     </section>
 
     <section id="methodology">
       <h2>03 / Methodology</h2>
       <p>Our workflow integrates meteorological drought identification with remote sensing land-surface analysis:</p>
       <ol style="margin-left: 1.5rem;">
-        <li><strong>Drought Classification:</strong> Monsoon-mean SPI-3 derived from 1980–2020 precipitation. Drought years = negative monsoon SPI values.</li>
-        <li><strong>Seasonal Aggregation:</strong> All variables averaged over the JJASO (June–October) monsoon window for 2000–2022.</li>
-        <li><strong>Comparative Analysis:</strong> Peri-urban vs. rural contrasts computed for LST, NDVI, soil moisture, and ET₀. Anomalies and percent differences calculated for drought vs. non-drought subsets.</li>
+        <li><strong>Drought Classification:</strong> Monsoon-mean SPI-3 derived from 1980-2020 precipitation. Drought years = negative monsoon SPI values.</li>
+        <li><strong>Seasonal Aggregation:</strong> All variables averaged over the JJASO (June-October) monsoon window for 2000-2022.</li>
+        <li><strong>Comparative Analysis:</strong> Peri-urban vs. rural contrasts computed for LST, NDVI, soil moisture, and ET0. Anomalies and percent differences calculated for drought vs. non-drought subsets.</li>
         <li><strong>Ecological Stress Mapping:</strong> NDVI declines coupled with soil moisture depletion and elevated evaporative demand to quantify vulnerability amplification.</li>
       </ol>
+      <figure class="section-figure">
+        <img src="methodology_flowchart_poster.svg" alt="Methodology flowchart for drought, heat, and vulnerability analysis">
+      </figure>
     </section>
 
     <section id="results">
@@ -113,12 +109,12 @@
       <p>Monsoon droughts reshape thermal and ecological gradients across the urban-rural continuum:</p>
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="value">+0.94°C</div>
+          <div class="value">+0.94 C</div>
           <div class="label">Avg. peri-urban heat penalty</div>
         </div>
         <div class="stat-card">
-          <div class="value">1.15°C → 0.35°C</div>
-          <div class="label">Thermal gap (non-drought → drought)</div>
+          <div class="value">1.15 C to 0.50 C</div>
+          <div class="label">Thermal gap, non-drought to drought</div>
         </div>
         <div class="stat-card">
           <div class="value">~4% lower</div>
@@ -130,9 +126,9 @@
         </div>
       </div>
       <div class="highlight-box">
-        <strong>Thermal Convergence vs. Ecological Divergence:</strong> While drought narrows the urban-rural temperature gap (rural areas warm sharply due to soil moisture loss and reduced evaporative cooling), peri-urban grasslands experience disproportionately higher vegetation stress and evaporative demand (+23.6 mm avg ET₀ difference; +2.66% higher ET₀ during droughts).
+        <strong>Thermal Convergence vs. Ecological Divergence:</strong> While drought narrows the urban-rural temperature gap, peri-urban grasslands experience disproportionately higher vegetation stress and evaporative demand (+23.6 mm avg ET0 difference; +2.66% higher ET0 during droughts).
       </div>
-      <a href="monsoon_drought_analysis_dashboard.html" class="btn">🔍 Explore Interactive Dashboard</a>
+      <a href="monsoon_drought_analysis_dashboard.html" class="btn">Explore Interactive Dashboard</a>
       <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #555;">Time series, anomaly plots, and statistical comparisons are fully interactive. Hover for tooltips, toggle layers, and export figures.</p>
     </section>
 
@@ -144,27 +140,30 @@
         <li><strong>Indicator sensitivity:</strong> Soil moisture and NDVI respond more sharply than LST during dry monsoons, making them critical early-warning metrics for peri-urban land managers.</li>
         <li><strong>Methodological value:</strong> Dashboard-driven presentation enables real-time inspection, reproducibility, and iterative updates beyond the static poster format.</li>
       </ul>
+      <figure class="section-figure">
+        <img src="urban_heat_drought_vulnerability_flow.svg" alt="Urban heat and drought vulnerability flow diagram">
+      </figure>
     </section>
 
     <section id="policy">
       <h2>06 / Policy & Planning Implications</h2>
       <p>Translating science into actionable urban climate resilience:</p>
       <ul style="list-style: none; padding: 0;">
-        <li>✅ <strong>Integrate drought-heat metrics</strong> into municipal water-security and heat-risk planning frameworks.</li>
-        <li>✅ <strong>Prioritize peri-urban greening</strong> with drought-resilient native species and soil moisture retention strategies.</li>
-        <li>✅ <strong>Protect transitional landscapes</strong> from unregulated conversion, as they serve as critical thermal and ecological buffers.</li>
-        <li>✅ <strong>Adopt living dashboards</strong> as decision-support tools for local agencies, enabling dynamic monitoring and adaptive management.</li>
+        <li><strong>Integrate drought-heat metrics</strong> into municipal water-security and heat-risk planning frameworks.</li>
+        <li><strong>Prioritize peri-urban greening</strong> with drought-resilient native species and soil moisture retention strategies.</li>
+        <li><strong>Protect transitional landscapes</strong> from unregulated conversion, as they serve as critical thermal and ecological buffers.</li>
+        <li><strong>Adopt living dashboards</strong> as decision-support tools for local agencies, enabling dynamic monitoring and adaptive management.</li>
       </ul>
       <div class="highlight-box" style="background: #f8f0e3; border-left-color: #e55039;">
-        <strong>For Kathmandu & similar Himalayan cities:</strong> Peri-urban zones are not just transition areas—they are frontline ecosystems requiring targeted climate adaptation investment.
+        <strong>For Kathmandu & similar Himalayan cities:</strong> Peri-urban zones are not just transition areas; they are frontline ecosystems requiring targeted climate adaptation investment.
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <p>📊 <a href="monsoon_drought_analysis_dashboard.html">Interactive Dashboard</a> | 💻 <a href="https://github.com/prarocks/EGU-26">GitHub Repository</a> | 📧 Contact: <a href="077bce103.prasanna@pcampus.edu.np">077bce103.prasanna@pcampus.edu.np</a></p>
-      <p><small>© 2026 Prasanna Dahal & Suraj Lamichhane | Distributed under CC BY 4.0 | EGU General Assembly 2026</small></p>
+      <p><a href="monsoon_drought_analysis_dashboard.html">Interactive Dashboard</a> | <a href="https://github.com/prarocks/EGU-26">GitHub Repository</a> | Contact: <a href="077bce103.prasanna@pcampus.edu.np">077bce103.prasanna@pcampus.edu.np</a></p>
+      <p><small>2026 Prasanna Dahal & Suraj Lamichhane | Distributed under CC BY 4.0 | EGU General Assembly 2026</small></p>
     </div>
   </footer>
 </body>
